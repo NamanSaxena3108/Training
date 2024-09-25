@@ -1,3 +1,7 @@
+def totalCost(budget,duration):
+    return budget*duration
+
+
 name=input("Hello User 😊 Please Enter Your Name \n")
 
 print(f"Hello {name.title()}, Welcome to Personalized Adventure Guide")
@@ -21,12 +25,14 @@ try:
         print("Invalid budget")
     
     days=int(input("Enter the number of days \n"))
-    totalCost=days*budget
+    total=totalCost(budget,days)
 
     print(f"""
     days = {days} \n
     budget = {budget} \n
-    total cost = {totalCost}""")
+    total cost = {total}""")
 
-except ValueError:
-    print("Invalid input. Please enter a valid number")
+# except ValueError:
+#     print("Invalid input. Please enter a valid number")
+except  Exception as e:
+    print("An error occurred: ", str(e))
