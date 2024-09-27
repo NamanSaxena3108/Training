@@ -2,15 +2,24 @@ def totalCost(budget,duration):
     return budget*duration
 
 def getValidNumber(prompt):
-    is_true=True
-    while is_true:
+    while True:
+        try:
+            value=input(prompt)
+            if value.isnumeric():
+                return value
+            else:
+                print("Wrong input. Please give input again")
+                continue
+        except ValueError:
+            print("Invalid Input! Enter again")
+
+def getDesti(prompt):
+    while True:
         try:
             value=input(prompt)
             if value == "mountain" or value == "Mountain": 
                 return value
             elif value == "Beach" or value == "beach":
-                return value
-            elif value.isnumeric():
                 return value
             else:
                 print("Wrong input. Please give input again")
@@ -45,7 +54,7 @@ Your Total Expenditure will be : {total}""")
 
 name=input("Hello User 😊 Please Enter Your Name \n")
 print(f"Hello {name.title()}, Welcome to Personalized Adventure Guide")
-destination=getValidNumber("Where do you want to go : ")
+destination=getDesti("Where do you want to go : ")
 Location(destination)
 budget=int(getValidNumber("Enter the Budget : "))
 Amount(budget)
