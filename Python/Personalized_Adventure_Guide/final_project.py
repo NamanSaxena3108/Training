@@ -2,10 +2,18 @@ def totalCost(budget,duration):
     return budget*duration
 
 def getValidNumber(prompt):
-    while True:
+    is_true=True
+    while is_true:
         try:
             value=input(prompt)
-            return value
+            if value == "mountain" or value == "Mountain": 
+                return value
+            elif value == "Beach" or value == "beach":
+                return value
+            elif value.isnumeric():
+                return value
+            else:
+                continue
         except ValueError:
             print("Invalid Input! Enter again")
 
