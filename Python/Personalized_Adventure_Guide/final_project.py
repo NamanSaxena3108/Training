@@ -13,6 +13,7 @@ def getValidNumber(prompt):
             elif value.isnumeric():
                 return value
             else:
+                print("Wrong input. Please give input again")
                 continue
         except ValueError:
             print("Invalid Input! Enter again")
