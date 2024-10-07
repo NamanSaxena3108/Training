@@ -122,4 +122,3 @@ def main():
 main()
 
 
-#Check is choice is in cart or not. It is not complete yet 
