@@ -1,7 +1,10 @@
 def totalCost(budget,duration):
+    """Calculate the total cost based  on the days and budget"""
     return budget*duration
 
 def getValidNumber(prompt):
+    """This check for any of the input that a user enter should 
+    be of Integer Type and doess not match tha test case or our requirement"""
     while True:
         try:
             value=input(prompt)
@@ -14,6 +17,7 @@ def getValidNumber(prompt):
             print("Invalid Input! Enter again")
 
 def getDesti(prompt):
+    """Check if the input is in string and is valid for our demand. """
     while True:
         try:
             value=input(prompt)
@@ -28,6 +32,8 @@ def getDesti(prompt):
             print("Invalid Input! Enter again")
 
 def Location(destination):
+    """Confirm the Location based on our Input
+It also convert our input in lower form and strip all the unecessary spaces"""
     destination=str(destination).lower().strip()
     if destination == "mountain":
         print("You are going to the Mountain")
@@ -37,6 +43,7 @@ def Location(destination):
         print("Enter the correct choice")
 
 def Amount(budget):
+    """Check for the amount that we had enter and according to our budget and provide with needful info"""
     if budget >= 500:
         print("Luxury")
     elif  budget >= 200:
@@ -47,6 +54,7 @@ def Amount(budget):
         print("Invalid budget")
 
 def Printing(duration,budget,total):
+    """It take the value from the other function and print all the necessary information"""
     print(f""" \nNo. of Days are : {duration} \n
 Your Budget was : {budget} \n
 Your Total Expenditure will be : {total}""")
