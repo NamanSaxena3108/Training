@@ -34,7 +34,6 @@ def cart(quantity):
             item_name=input("Enter the name of item you want to add \n").capitalize()
             item_quantity=getQuantity()
             check=check_available(quantity,item_quantity,item_name)
-            if item_name 
             if check == True:
                 cart[item_name]=item_quantity
                 ans=input("Want to add more item ?\n").lower()
@@ -120,5 +119,3 @@ def main():
     display_cart_items(car)
     print(f"Amount to be paid {amount}")
 main()
-
-

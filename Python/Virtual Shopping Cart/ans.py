@@ -42,3 +42,7 @@
 # ins = lambda l,index,element : l.__setitem__(slice(index,index),[element])
 # ins(l,1,100)
 # print(l)
+dic={'apple':5,'banana':5}
+print(dic.__len__())
+dic.__delitem__('apple')
+print(dic)
