@@ -23,7 +23,7 @@ def totalCost(cart, prices):
     return total
 
 def applyDiscount(total):
-    if total >=5000:
+    if total >=5000: 
         print("Your Discount is 40%")
         total=(40/100)*total
     elif total >=3000:
