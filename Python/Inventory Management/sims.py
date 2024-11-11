@@ -9,27 +9,36 @@ class Items:
 price - {self.pricePermanent} \n
 quantity - {self.quantityPermanent}''')
         
-i1=Items("pen",20,200)
-i2=Items("pencil",50,300)
-i3=Items("file",50,150)
-i4=Items("scale",20,100)
-
-items=[i1,i2,i3,i4]
-
 class Inventory:
+
     def __init__(self):
-        items=[]
+        self.items=[]
+
     def addItems(self,name,price,quantity):
-        items.__add__(Items(name,price,quantity))
-    def update_quantity(self):
-        pass
+        for item in self.items:
+            if item.name == name:
+                print(f" {name} already exists. Please use update_quantity to modify details.")
+                return None
+        self.items.append(Items(name, price, quantity))
+
+    def update_quantity(self,name,quantity):
+        for item in self.items:
+            if item.name == name:
+                item.quantity = item.quantity + quantity
+                print("Quantity updated.") 
+            else:
+                print("Item not present.")
+
     def update_price(self):
         pass
     def displayItems(self):
         pass
 
-inventory1=Inventory()
-inventory1.addItems()
-inventory1.addItems()
-inventory1.addItems()
-inventory1.addItems()
+inventory1 = Inventory()
+inventory2 = Inventory()
+
+inventory1.update_quantity("pen", 10)
+inventory1.addItems('pen', 100, 15)
+# inventory1.addItems('pencil', 5, 100)
+# inventory1.addItems('scale', 5, 100)
+# inventory1.addItems('Box', 250, 40)
