@@ -2,6 +2,7 @@
 Create a List - Store a list of tasks
 '''
 tasks  = []
+import datetime as dt
 
 # Add tasks
 def add_task(title, description, priority = 'low',deadline = None):
@@ -55,8 +56,9 @@ def filter_by_priority(priority_level):
     print(new)
     
 # Filter  by Date
-def filter_by_date():
-    pass
+def filter_by_date(due_date):
+    dt.strptime(due_date,'%y-%m-%d')
+
 add_task('Give lab list','Number of students','High','2024-11-13')
 add_task('Give lab list','Number of students','Low','2024-11-13')
 list_task()
